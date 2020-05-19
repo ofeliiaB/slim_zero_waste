@@ -1,0 +1,21 @@
+
+{% extends 'templates/app.twig' %}
+
+{% block content %}
+
+<div class="container">
+  <h1>Today's Menu</h1>
+
+{% for meal in meals %}
+      <div class="well">
+        <h3>{{ meal.meal_name }}</h3>
+        <p>{{ meal.meal_desc }}</p>
+        <small>Price: {{ meal.price }} CZK</small>
+        <button type="button" class="btn btn-outline-success">
+        <a a href="#">Add to Cart</a>
+        </button>
+
+      </div>
+{% endfor %}
+</div>
+{% endblock %}

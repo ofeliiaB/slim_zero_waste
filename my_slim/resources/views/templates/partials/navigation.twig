@@ -1,0 +1,47 @@
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+  <a class="navbar-brand" href="#">Zero Waste Foods</a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <div class="collapse navbar-collapse" id="navbarNavDropdown">
+    <ul class="navbar-nav">
+
+    {% if auth.check %}
+                <li class="nav-item active">
+                  <a class="nav-link" href="{{ path_for('home') }}">About<span class="sr-only">(current)</span></a>
+                </li>
+
+                <li class="nav-item">
+                  <a class="nav-link" href="{{ path_for('meals') }}">Daily Menu</a>
+                </li>
+
+                <li class="nav-item">
+                  <a class="nav-link" href="{{ path_for('settings') }}">Settings</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="{{ path_for('paypal') }}">Pay Pal</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="#">Point's Count: {{ auth.user.points }}</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="{{ path_for('cart') }}">Cart</a>
+                </li>
+
+                <li class="nav-item">
+                  <a class="nav-link" href="{{ path_for('auth.signout') }}">Log Out</a>
+                </li>
+
+      {% else %}
+            <li class="nav-item">
+              <a class="nav-link" href="{{ path_for('auth.signup') }}">Register</a>
+            </li>
+
+            <li class="nav-item">
+              <a class="nav-link" href=" {{ path_for('auth.signin') }} ">Sign In</a>
+            </li>
+
+      {% endif %}
+    </ul>
+  </div>
+</nav>
