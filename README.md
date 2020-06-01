@@ -1,6 +1,6 @@
 # Zero Waste Foods App
 
-> The application is built using Laravel framework
+> The application is built using Slim framework
 
 ### Server Environment
 The app has the following server requirements:
